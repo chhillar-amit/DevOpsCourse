@@ -1,4 +1,5 @@
 from flask import session
+from flask import render_template
 
 _DEFAULT_ITEMS = [
     { 'id': 1, 'status': 'Not Started', 'title': 'List saved todo items' },

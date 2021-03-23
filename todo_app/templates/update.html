@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}To-Do App{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">To-Do App</h1>
+    <p class="lead">Just another to-do app.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Items</h2>
+      <ul class="list-group mb-4">
+        {% for item in items %}
+        <li>{{ item.id }} - {{item.status}} - {{item.title}}</li>
+        {% endfor %} 
+      </ul>
+      <form action="/update_item" method="post" class="update-example">
+        <div class="update-example">
+        <label for="title">Enter the Task ID : </label>
+        <input type="number" name="ID" id="ID" required>
+        </div>
+        <div class="update-example">
+        <input type="submit" value="Update ID">
+    </div>
+  </div>
+{% endblock %}
