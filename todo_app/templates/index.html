@@ -11,8 +11,22 @@
     <div class="col-md-12">
       <h2>Items</h2>
       <ul class="list-group mb-4">
-        <!-- List the todo items here -->
+        {% for item in items %}
+        <li>{{ item.id }} - {{item.status}} - {{item.title}} -> <a href="/save_item/{{ item.id }}">Mark Complete</a> </li>
+        {% endfor %} 
       </ul>
+      <a href="/form">Add New To-Do Item</a> 
+      <br>
+      <a href="/update">Update Status</a> 
+      <!--<form action="/add_item" method="post" class="form-example">
+      #  <div class="form-example">
+      #    <label for="title">Add your new Task: </label>
+      #    <input type="text" name="title" id="title" required>
+      #  </div>
+      #  <div class="form-example">
+      #    <input type="submit" value="Add Title">
+      #  </div>
+     </form> -->
     </div>
   </div>
 {% endblock %}
